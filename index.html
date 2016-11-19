@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>pure-css-loader</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+
+    <link href="spinner.css" rel="stylesheet">
+    <link href="loader-keyframes.css" rel="stylesheet">
+
+    <style>
+      .page {
+        width: 100%;
+        text-align: center;
+      }
+      /* if you feel like disabling the loader at all,
+      uncomment this out.
+      .spinner-mask {
+        display: none;
+      }
+      */
+    </style>
+
+  </head>
+
+  <body>
+    <div class="spinner-mask">
+      <div id="loader" class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+    <div class="page">
+      <h2>pure-css-loader</h2>
+      <p>loads even without javascript. try disabling javascript and refreshing
+      this page.</p>
+      <p><a href="https://github.com/thewisenerd/pure-css-loader">source</p>
+    </div>
+
+    <script>
+      function contains(a, obj) {
+        for (var i = 0; i < a.length; i++) {
+          if (a[i] === obj) {
+            return true;
+          }
+        }
+        return false;
+      }
+      function addClass(dom, classname) {
+        s = dom.getAttribute('class');
+        if ( ! contains(s.split(' '), classname) ) {
+          dom.setAttribute('class', s + ' ' + classname);
+        }
+      }
+      window.onload = function(e){
+        setTimeout(function() {
+          addClass(document.getElementById('loader'), 'spinner-hide');
+          addClass(document.getElementsByClassName('spinner-mask')[0], 'spinner-mask-hide');
+        }, 1000 * 3.8);
+      }
+    </script>
+  </body>
+
+
+  <noscript>
+    <style>
+      #loader {
+        -webkit-animation: cssAnimation22900 0.4s ease-in 5.2s forwards;
+          -moz-animation: cssAnimation22900 0.4s ease-in 5.2s forwards;
+            -o-animation: cssAnimation22900 0.4s ease-in 5.2s forwards;
+                animation: cssAnimation22900 0.4s ease-in 5.2s forwards;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+      .spinner-mask {
+        -webkit-animation: cssAnimation8255 0.3s ease-in 5.6s forwards;
+          -moz-animation: cssAnimation8255 0.3s ease-in 5.6s forwards;
+            -o-animation: cssAnimation8255 0.3s ease-in 5.6s forwards;
+                animation: cssAnimation8255 0.3s ease-in 5.6s forwards;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+    </style>
+  </noscript>
+</html>
