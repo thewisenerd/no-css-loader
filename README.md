@@ -16,3 +16,17 @@ the source code should be fairly simple to go through. run down;
  - [keyframegen.js](/keyframegen.js) : 5-minute script written to generate keyframes
 
 note: serve keyframes,etc css using gzip, because those tend to get big.
+
+add one of the following to the ending keyframe (@ 100%).
+```
+overflow: hidden;
+visibility: hidden;
+display: none;
+```
+
+as to when to use what, use your own discretion.
+
+references
+----------
+
+[this answer on SO](http://stackoverflow.com/a/21994053)
